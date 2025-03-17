@@ -4,6 +4,7 @@ import NavBar from '../components/landing/NavBar.vue'
 import HeroSection from '@/components/landing/HeroSection.vue';
 import FeaturesSection from '@/components/landing/FeaturesSection.vue'
 import FeaturedLocation from '@/components/landing/FeaturedLocation.vue';
+import FooterSection from '@/components/landing/FooterSection.vue';
 
 </script>
 
@@ -22,6 +23,9 @@ import FeaturedLocation from '@/components/landing/FeaturedLocation.vue';
       </div>
       <div>
         <FeaturedLocation />
+      </div>
+      <div>
+        <FooterSection class="bg-gray-200"/>
       </div>
     </main>
   </div>

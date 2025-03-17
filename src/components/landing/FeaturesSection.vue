@@ -1,155 +1,76 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import LineButtons from '@/components/shared/LineButtons.vue'
 import LineBar from '@/components/shared/LineBar.vue'
 import BaseCard from '../shared/Base/BaseCard.vue'
 import OnlyButton from '../buttons/OnlyButton.vue'
 import CardOnly from '../shared/CardText.vue'
 
-interface Button {
-  label: string
-  classButtonCustom: string
-  iconClassCustom: string
-  classLabel?: string
-  icon?: string
-  onClick: () => void
-}
-
 const handleClick = () => {
   alert('¡Botón clickeado!')
 }
 
-const buttons: Button[] = [
-  {
-    classButtonCustom: '',
-    iconClassCustom: 'w-8 h-8 bg-red-100 mr-4 rounded-full text-primary p-1',
-    label: 'Holiday Rentals',
-    onClick: () => {
-      console.log('Fields')
-    },
-  },
-  {
-    classButtonCustom: '',
-    iconClassCustom: 'w-8 h-8 bg-green-100 mr-4 rounded-full text-green-600 p-1',
-    label: 'Residential Spaces',
-    onClick: () => {
-      console.log('Mvp')
-    },
-  },
-  {
-    classButtonCustom: '',
-    iconClassCustom: 'w-8 h-8 bg-purple-100 mr-4 rounded-full text-purple-600 p-1',
-    label: 'Event Spaces',
-    onClick: () => {
-      console.log('Teams')
-    },
-  },
-  {
-    classButtonCustom: '',
-    iconClassCustom: 'w-8 h-8 bg-blue-100 mr-4 rounded-full text-sky-600 p-1',
-    label: 'Commercial Properities',
-    onClick: () => {
-      console.log('Teams')
-    },
-  },
-  {
-    classButtonCustom: '',
-    iconClassCustom: 'w-8 h-8 bg-orange-100 mr-4 rounded-full text-orange p-1',
-    label: 'More',
-    onClick: () => {
-      console.log('Teams')
-    },
-  },
-]
-
-const containerRef = ref<HTMLElement | null>(null)
-
-const scrollLeft = () => {
-  if (containerRef.value) {
-    containerRef.value.scrollBy({ left: -200, behavior: 'smooth' })
-  }
-}
-
-const scrollRight = () => {
-  if (containerRef.value) {
-    containerRef.value.scrollBy({ left: 200, behavior: 'smooth' })
-  }
-}
-
 const cards = ref([
   {
-    images: ['../images/Stadium1.jpg', '../images/Stadium2.jpg'],
-    price: 85000,
-    currency: 'COL',
-    title: 'Luxury villa in Rego Park',
-    city: 'Popayán',
-    owner: 'Juan Pablo',
-    ocupation: 'Property',
-    time: 1,
-    players: 11,
-  },
-  {
-    images: ['../images/Stadium1.jpg', '../images/Stadium2.jpg'],
-    price: 75000,
-    currency: 'COL',
-    title: 'Modern apartment in Cali',
-    city: 'Cali',
-    owner: 'Pedro Juan',
+    images: [
+      '../images/LanzamientoPelota.webp',
+      '../images/Lanzamiento2.jpg',
+      '../images/Lanzamiento3.jpg',
+    ],
+    price: 'Agilidad',
+    title: 'Lanzamiento de Pelota',
+    city: 'Manos',
+    owner: 'Practiquemos',
     ocupation: 'Property',
     time: 2,
-    players: 8,
+    players: 2,
+  },
+  {
+    images: ['../images/Equilibrio.webp', '../images/Equilibrio2.jpg', '../images/Equilibrio3.jpg'],
+    price: 'Equilibrio',
+    title: 'Equilibrio sobre una pierna',
+    city: 'Completo',
+    owner: 'Practiquemos',
+    ocupation: 'Property',
+    time: 2,
+    players: 1,
+    redireccion: 'https://ejemplo.com/detalles'
   },
   {
     images: ['../images/Stadium1.jpg', '../images/Stadium2.jpg'],
-    price: 65000,
-    currency: 'COL',
+    price: 'Coordinacion',
     title: 'Cozy house in Medellín',
     city: 'Medellín',
-    owner: 'Camila La Leona',
+    owner: 'Practiquemos',
     ocupation: 'Property',
     time: 3,
     players: 5,
   },
   {
     images: ['../images/Stadium1.jpg', '../images/Stadium2.jpg'],
-    price: 65000,
-    currency: 'COL',
+    price: 'Equilibrio',
     title: 'Cozy house in Medellín',
     city: 'Medellín',
-    owner: 'Juan Pedro',
+    owner: 'Practiquemos',
     ocupation: 'Property',
     time: 3,
     players: 5,
   },
   {
     images: ['../images/Stadium1.jpg', '../images/Stadium2.jpg'],
-    price: 65000,
-    currency: 'COL',
+    price: 'Agilidad',
     title: 'Cozy house in Medellín',
     city: 'Medellín',
-    owner: 'Juan Pedro',
+    owner: 'Practiquemos',
     ocupation: 'Property',
     time: 3,
     players: 5,
   },
   {
     images: ['../images/Stadium1.jpg', '../images/Stadium2.jpg'],
-    price: 65000,
-    currency: 'COL',
+    price: 'Coordinacion',
     title: 'Cozy house in Medellín',
     city: 'Medellín',
-    owner: 'Juan Pedro',
-    ocupation: 'Property',
-    time: 3,
-    players: 5,
-  },
-  {
-    images: ['../images/Stadium1.jpg', '../images/Stadium2.jpg'],
-    price: 65000,
-    currency: 'COL',
-    title: 'Cozy house in Medellín',
-    city: 'Medellín',
-    owner: 'Juan Pedro',
+    owner: 'Practiquemos',
     ocupation: 'Property',
     time: 3,
     players: 5,
@@ -159,28 +80,8 @@ const cards = ref([
 
 <template>
   <section class="relative max-w-screen-lg mx-auto px-6">
-    <h2 class="text-center font-bold text-4xl mt-24">Featured Listings</h2>
+    <h2 class="text-center font-bold text-4xl mt-24">Nuestros Ejercicios</h2>
     <LineBar />
-    <div class="relative flex items-center">
-      <button @click="scrollLeft" class="mr-2 p-2 bg-gray-300 rounded-full hover:bg-gray-400">
-        ◀
-      </button>
-      <div
-        ref="containerRef"
-        class="flex gap-4 overflow-x-auto scrollbar-hide whitespace-nowrap px-2 py-2"
-        style="scroll-behavior: smooth"
-      >
-        <LineButtons
-          :buttons="buttons"
-          :classContainer="'flex gap-4 overflow-x-auto scrollbar-hide whitespace-nowrap px-2 py-2'"
-          :classButton="'flex items-center px-4 py-2 rounded-full text-sm font-semibold transition-all bg-gray-200 hover:bg-primary hover:text-white'"
-          :classLabel="''"
-        />
-      </div>
-      <button @click="scrollRight" class="ml-2 p-2 bg-gray-300 rounded-full hover:bg-gray-400">
-        ▶
-      </button>
-    </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 justify-self-center">
       <BaseCard
@@ -188,7 +89,6 @@ const cards = ref([
         :key="index"
         :images="card.images"
         :price="card.price"
-        :currency="card.currency"
         :title="card.title"
         :city="card.city"
         :time="card.time"
@@ -211,29 +111,29 @@ const cards = ref([
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <h2 class="text-4xl font-bold text-gray-800 leading-tight text-center md:text-left">
-            Insights and <br />
-            Performance <br />
-            Metrics
+            Conoce <br />
+            Todos Nuestros <br />
+            Objetivos
           </h2>
         </div>
 
         <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <CardOnly
-            :title="'5000+'"
+            :title="'Meta #1'"
             :description="'Total Listings in the System'"
             :cardClass="' bg-black text-white w-full h-40 flex flex-col items-center justify-center text-center rounded-lg'"
             :link="''"
           />
 
           <CardOnly
-            :title="'1000+'"
+            :title="'Meta #2'"
             :description="'Active Listings'"
             :cardClass="' bg-black text-white w-full h-40 flex flex-col items-center justify-center text-center rounded-lg'"
             :link="''"
           />
 
           <CardOnly
-            :title="'30+'"
+            :title="'Meta #3'"
             :description="'Articles in the Blog'"
             :cardClass="' bg-black text-white w-full h-40 flex flex-col items-center justify-center text-center rounded-lg'"
             :link="''"
@@ -244,13 +144,4 @@ const cards = ref([
   </div>
 </template>
 
-<style scoped>
-/* Ocultar scrollbar */
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-</style>
+<style scoped></style>

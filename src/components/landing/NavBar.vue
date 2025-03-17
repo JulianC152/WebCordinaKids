@@ -1,27 +1,67 @@
 <script lang="ts" setup>
-import { ref, watch } from 'vue';
-import IconUser from '@/components/shared/icons/IconUser.vue';
-import IconBars from '@/components/shared/icons/IconBars.vue';
+import { ref, watch } from 'vue'
+import IconUser from '@/components/shared/icons/IconUser.vue'
+import IconBars from '@/components/shared/icons/IconBars.vue'
+import IconDown from '../shared/icons/IconDown.vue'
 
-const isOpen = ref(false);
+const isOpen = ref(false)
+const isDropdownOpen = ref(false)
 
 // Evitar scroll en el fondo cuando el menú está abierto
 watch(isOpen, (value) => {
-  document.body.style.overflow = value ? 'hidden' : 'auto';
-});
+  document.body.style.overflow = value ? 'hidden' : 'auto'
+})
+
+const activities = [
+  { name: 'Actividad 1', image: '../images/Avatar1.jpeg' },
+  { name: 'Actividad 2', image: '../images/Avatar2.jpeg' },
+  { name: 'Actividad 3', image: '../images/Avatar3.jpeg' },
+  { name: 'Actividad 3', image: '../images/Avatar4.jpeg' },
+]
 </script>
 
 <template>
   <nav class="bg-white p-4 shadow-md fixed top-0 w-full z-50">
-    <div class="container mx-auto flex justify-between items-center">
+    <div class="container mx-auto flex justify-between items-center relative">
       <!-- Título a la izquierda -->
-      <div class="text-black text-2xl font-extrabold">FUT CHAMPS</div>
+
+      <div class="flex text-black text-2xl font-extrabold items-center">
+        <img src="/public/images/logo.webp" alt="" class="mr-5 w-10 h-10 rounded-full" />
+        CoordinaKids
+      </div>
 
       <!-- Menú en desktop -->
-      <div class="hidden md:flex space-x-16">
+      <div class="hidden md:flex space-x-8 items-center">
         <a href="#" class="text-letters hover:text-primary font-bold">Home</a>
-        <a href="#" class="text-letters hover:text-primary font-bold">Tienda</a>
-        <a href="#" class="text-letters hover:text-primary font-bold">Contacto</a>
+
+        <!-- Dropdown -->
+        <div class="relative">
+          <button
+            @click="isDropdownOpen = !isDropdownOpen"
+            class="flex items-center rounded-m py-2 px-4 text-letters text-md font-bold hover:text-primary focus:outline-none"
+          >
+            Open Menu
+            <IconDown
+              class="ml-2 w-4 h-4 transition-transform"
+              :class="{ 'rotate-180': isDropdownOpen }"
+            />
+          </button>
+          <ul
+            v-if="isDropdownOpen"
+            class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg"
+          >
+            <li
+              v-for="activity in activities"
+              :key="activity.name"
+              class="flex items-center px-4 py-2 cursor-pointer hover:bg-gray-100"
+            >
+              <img :src="activity.image" alt="Avatar" class="w-8 h-8 rounded-full mr-3" />
+              {{ activity.name }}
+            </li>
+          </ul>
+        </div>
+        <a href="#" class="text-letters hover:text-primary font-bold">Quienes Somos</a>
+        <a href="#" class="text-letters hover:text-primary font-bold">Propuesta</a>
       </div>
 
       <!-- Icono de usuario y menú hamburguesa en móviles -->
@@ -35,23 +75,24 @@ watch(isOpen, (value) => {
     </div>
 
     <!-- Overlay -->
-    <div 
-      v-if="isOpen" 
+    <div
+      v-if="isOpen"
       class="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300"
       @click="isOpen = false"
     ></div>
 
-    <!-- Menú desplegable en móviles (de derecha a izquierda) -->
+    <!-- Menú desplegable en móviles -->
     <div
       class="fixed top-0 right-0 h-full w-64 bg-white shadow-lg p-6 flex flex-col items-start space-y-4 transform transition-transform duration-300 ease-in-out z-50"
       :class="isOpen ? 'translate-x-0' : 'translate-x-full'"
     >
       <!-- Botón de cierre -->
       <button @click="isOpen = false" class="self-end text-black text-2xl font-bold">×</button>
-      
+
       <a href="#" class="text-letters hover:text-primary font-bold">Home</a>
-      <a href="#" class="text-letters hover:text-primary font-bold">Tienda</a>
-      <a href="#" class="text-letters hover:text-primary font-bold">Contacto</a>
+      <a href="#" class="text-letters hover:text-primary font-bold">Actividades</a>
+      <a href="#" class="text-letters hover:text-primary font-bold">Propuesta</a>
+      <a href="#" class="text-letters hover:text-primary font-bold">Quienes Somos</a>
       <div class="flex items-center">
         <span class="mx-2 font-bold">Esp</span>
         <IconUser class="w-8 h-8" />

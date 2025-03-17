@@ -11,13 +11,9 @@ const props = defineProps({
     default: () => [],
   },
   price: {
-    type: Number,
-    required: true,
-    default: 4100,
-  },
-  currency: {
     type: String,
-    default: 'LKR',
+    required: true,
+    default: '',
   },
   title: {
     type: String,
@@ -49,6 +45,11 @@ const props = defineProps({
     required: true,
     default: '',
   },
+  redireccion: {
+    type: String,
+    required: true,
+    default: '',
+  },
 })
 
 const currentImageIndex = ref(0)
@@ -66,15 +67,17 @@ const prevImage = () => {
   currentImageIndex.value =
     (currentImageIndex.value - 1 + props.images.length) % props.images.length
 }
+
+const redirectToPage = () => {
+  if (props.redireccion) {
+    window.location.href = props.redireccion
+  }
+}
 </script>
 
 <template>
   <div class="rounded-lg shadow max-w-sm bg-white relative mb-10">
     <div class="relative group">
-      <div class="absolute m-2 justify-end z-20">
-        <span class="bg-green-600 text-white text-sm px-3 py-1 rounded-full">For Rent</span>
-      </div>
-
       <!-- Carrusel con desplazamiento correcto -->
       <div class="overflow-hidden rounded-lg relative h-48 w-full z-10">
         <div class="flex w-full h-full" :style="slideStyle">
@@ -83,7 +86,7 @@ const prevImage = () => {
             :key="index"
             :src="image"
             alt="Property Image"
-            class="w-full h-full object-cover flex-shrink-0"
+            class="w-full h-full flex-shrink-0"
           />
         </div>
       </div>
@@ -105,22 +108,25 @@ const prevImage = () => {
     </div>
     <div class="mt-4 p-2">
       <div class="flex text-red-500 text-lg font-semibold">
-        {{ props.price }} {{ props.currency }}
-        <span class="flex text-black text-md ml-2">/Month</span>
+        {{ props.price }}
       </div>
       <h2 class="text-xl font-bold text-gray-800">{{ props.title }}</h2>
       <div class="text-gray-600 text-sm mt-4 flex space-x-4">
         <span>{{ props.city }}</span>
         <span>|</span>
-        <span>{{ props.players }} Players</span>
+        <span>{{ props.players }} Jugadores</span>
         <span>|</span>
-        <span>{{ props.time }} Hours</span>
+        <span>{{ props.time }} Minutos</span>
       </div>
-      <div class="m-4  flex justify-between items-center">
+      <div class="m-5 flex justify-between items-center">
         <div>
-          <span class="text-lg font-bold text-black ">{{ props.owner }}</span
+          <button
+            @click="redirectToPage"
+            class="text-lg font-bold text-black border-1 rounded-full p-2 hover:bg-red-400"
+          >
+            {{ props.owner }}</button
           ><br />
-          <span class="text-sm text-letters">{{ props.oupation }}</span>
+          <!-- <span class="text-sm text-letters">{{ props.oupation }}</span> -->
         </div>
         <IconHeart class="ml-2 hover:text-primary bg-gray-100" />
       </div>
