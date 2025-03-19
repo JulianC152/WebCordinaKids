@@ -23,6 +23,7 @@ const cards = ref([
     ocupation: 'Property',
     time: 2,
     players: 2,
+    redireccion: '/activities/first'
   },
   {
     images: ['../images/Equilibrio.webp', '../images/Equilibrio2.jpg', '../images/Equilibrio3.jpg'],
@@ -33,7 +34,7 @@ const cards = ref([
     ocupation: 'Property',
     time: 2,
     players: 1,
-    redireccion: 'https://ejemplo.com/detalles'
+    redireccion: '/detalles/123'
   },
   {
     images: ['../images/Stadium1.jpg', '../images/Stadium2.jpg'],
@@ -44,6 +45,7 @@ const cards = ref([
     ocupation: 'Property',
     time: 3,
     players: 5,
+    redireccion: '/detalles/123'
   },
   {
     images: ['../images/Stadium1.jpg', '../images/Stadium2.jpg'],
@@ -95,6 +97,7 @@ const cards = ref([
         :players="card.players"
         :owner="card.owner"
         :oupation="card.ocupation"
+        :redireccion="card.redireccion"
       />
     </div>
     <div class="flex justify-center">

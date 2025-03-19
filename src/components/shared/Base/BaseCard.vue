@@ -1,9 +1,11 @@
 <script lang="ts" setup>
 import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
 import IconLeft from '../icons/IconLeft.vue'
 import IconRight from '../icons/IconRight.vue'
 import IconHeart from '../icons/IconHeart.vue'
 
+const router = useRouter();
 const props = defineProps({
   images: {
     type: Array as () => string[],
@@ -70,7 +72,7 @@ const prevImage = () => {
 
 const redirectToPage = () => {
   if (props.redireccion) {
-    window.location.href = props.redireccion
+    router.push(props.redireccion)
   }
 }
 </script>

@@ -47,10 +47,10 @@ const buttons: Button[] = [
   <section class="browse-categories">
     <h2 class="text-center font-bold text-4xl mt-24">Elige la categoria que mas te guste</h2>
     <LineBar></LineBar>
-    <div class="categories-container flex justify-center gap-24 m-10">
+    <div class="categories-container flex justify-center items-center gap-24 m-10">
       <LineButtons
         :buttons="buttons"
-        :classContainer="'grid gap-4 content-cente font-bold py-1 px-2 rounded-full text-white hover:text-white grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:py-0'"
+        :classContainer="'grid gap-4 content-cente font-bold py-1 px-2 rounded-full text-white hover:text-white grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 xl:py-0'"
         :classButton="'flex items-center hover:scale-105 font-bold py-1 px-4 rounded-full border-2 border-radius bg-transparent text-black'"
         :classLabel="''"
       />
