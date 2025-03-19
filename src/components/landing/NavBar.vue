@@ -1,30 +1,36 @@
 <script lang="ts" setup>
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import IconUser from '@/components/shared/icons/IconUser.vue'
 import IconBars from '@/components/shared/icons/IconBars.vue'
 import IconDown from '../shared/icons/IconDown.vue'
 
+const router = useRouter()
+
 const isOpen = ref(false)
 const isDropdownOpen = ref(false)
 
-// Evitar scroll en el fondo cuando el menú está abierto
-watch(isOpen, (value) => {
-  document.body.style.overflow = value ? 'hidden' : 'auto'
-})
-
+// Lista de actividades con sus respectivas rutas
 const activities = [
-  { name: 'Actividad 1', image: '../images/Avatar1.jpeg' },
-  { name: 'Actividad 2', image: '../images/Avatar2.jpeg' },
-  { name: 'Actividad 3', image: '../images/Avatar3.jpeg' },
-  { name: 'Actividad 3', image: '../images/Avatar4.jpeg' },
+  { name: 'Actividad 1', image: '../images/Avatar1.jpeg', route: '/activities/first' },
+  { name: 'Actividad 2', image: '../images/Avatar2.jpeg', route: '/activities/second' },
+  { name: 'Actividad 3', image: '../images/Avatar3.jpeg', route: '/activities/third' },
+  { name: 'Actividad 4', image: '../images/Avatar4.jpeg', route: '/activities/fourth' },
+  { name: 'Actividad 5', image: '../images/Avatar3.jpeg', route: '/activities/fourth' },
+  { name: 'Actividad 6', image: '../images/Avatar2.jpeg', route: '/activities/fourth' },
+  { name: 'Actividad 7', image: '../images/Avatar1.jpeg', route: '/activities/fourth' },
 ]
+
+// Función para redirigir dinámicamente según la actividad seleccionada
+const navigate = (route: string) => {
+  router.push(route)
+}
 </script>
 
 <template>
   <nav class="bg-white p-4 shadow-md fixed top-0 w-full z-50">
     <div class="container mx-auto flex justify-between items-center relative">
       <!-- Título a la izquierda -->
-
       <div class="flex text-black text-2xl font-extrabold items-center">
         <img src="/public/images/logo.webp" alt="" class="mr-5 w-10 h-10 rounded-full" />
         CoordinaKids
@@ -32,7 +38,12 @@ const activities = [
 
       <!-- Menú en desktop -->
       <div class="hidden md:flex space-x-8 items-center">
-        <a href="#" class="text-letters hover:text-primary font-bold">Home</a>
+        <a
+          @click.prevent="navigate('/')"
+          class="text-letters hover:text-primary font-bold cursor-pointer"
+        >
+          Home
+        </a>
 
         <!-- Dropdown -->
         <div class="relative">
@@ -54,12 +65,14 @@ const activities = [
               v-for="activity in activities"
               :key="activity.name"
               class="flex items-center px-4 py-2 cursor-pointer hover:bg-gray-100"
+              @click="navigate(activity.route)"
             >
               <img :src="activity.image" alt="Avatar" class="w-8 h-8 rounded-full mr-3" />
               {{ activity.name }}
             </li>
           </ul>
         </div>
+
         <a href="#" class="text-letters hover:text-primary font-bold">Quienes Somos</a>
         <a href="#" class="text-letters hover:text-primary font-bold">Propuesta</a>
       </div>
@@ -89,7 +102,7 @@ const activities = [
       <!-- Botón de cierre -->
       <button @click="isOpen = false" class="self-end text-black text-2xl font-bold">×</button>
 
-      <a href="#" class="text-letters hover:text-primary font-bold">Home</a>
+      <a href="/activities/first" class="text-letters hover:text-primary font-bold">Home</a>
       <a href="#" class="text-letters hover:text-primary font-bold">Actividades</a>
       <a href="#" class="text-letters hover:text-primary font-bold">Propuesta</a>
       <a href="#" class="text-letters hover:text-primary font-bold">Quienes Somos</a>
