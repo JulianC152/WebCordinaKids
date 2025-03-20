@@ -25,7 +25,7 @@ import FooterSection from '@/components/landing/FooterSection.vue';
         <FeaturedLocation />
       </div>
       <div>
-        <FooterSection class="bg-gray-200"/>
+        <FooterSection class="bg-gray-400"/>
       </div>
     </main>
   </div>
