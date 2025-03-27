@@ -21,7 +21,7 @@ import LineBar from '../shared/LineBar.vue'
 
 <template>
   <div class="flex flex-col items-center mb-12">
-    <h2 class="text-center font-bold text-4xl mt-24">Featured Listings</h2>
+    <h2 class="text-center font-bold text-4xl mt-24">Mas Actividades</h2>
     <LineBar />
 
     <div class="grid grid-cols-2 gap-4 mt-6">

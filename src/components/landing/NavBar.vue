@@ -12,13 +12,13 @@ const isDropdownOpen = ref(false)
 
 // Lista de actividades con sus respectivas rutas
 const activities = [
-  { name: 'Actividad 1', image: '../images/Avatar1.jpeg', route: '/activities/first' },
-  { name: 'Actividad 2', image: '../images/Avatar2.jpeg', route: '/activities/second' },
-  { name: 'Actividad 3', image: '../images/Avatar3.jpeg', route: '/activities/third' },
-  { name: 'Actividad 4', image: '../images/Avatar4.jpeg', route: '/activities/fourth' },
-  { name: 'Actividad 5', image: '../images/Avatar3.jpeg', route: '/activities/fourth' },
-  { name: 'Actividad 6', image: '../images/Avatar2.jpeg', route: '/activities/fourth' },
-  { name: 'Actividad 7', image: '../images/Avatar1.jpeg', route: '/activities/fourth' },
+  { name: 'Acoplamiento', image: '../images/Avatar1.jpeg', route: '/activities/first' },
+  { name: 'Orientacion', image: '../images/Avatar2.jpeg', route: '/activities/second' },
+  { name: 'Diferenciación', image: '../images/Avatar3.jpeg', route: '/activities/third' },
+  { name: 'Equilibrio', image: '../images/Avatar4.jpeg', route: '/activities/fourth' },
+  { name: 'Adaptación', image: '../images/Avatar3.jpeg', route: '/activities/fourth' },
+  { name: 'Ritmo', image: '../images/Avatar2.jpeg', route: '/activities/fourth' },
+  { name: 'Reaccion', image: '../images/Avatar1.jpeg', route: '/activities/fourth' },
 ]
 
 // Función para redirigir dinámicamente según la actividad seleccionada
@@ -51,7 +51,7 @@ const navigate = (route: string) => {
             @click="isDropdownOpen = !isDropdownOpen"
             class="flex items-center rounded-m py-2 px-4 text-letters text-md font-bold hover:text-primary focus:outline-none"
           >
-            Open Menu
+            Actividades
             <IconDown
               class="ml-2 w-4 h-4 transition-transform"
               :class="{ 'rotate-180': isDropdownOpen }"

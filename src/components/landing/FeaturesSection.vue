@@ -37,9 +37,9 @@ const cards = ref([
     redireccion: '/detalles/123'
   },
   {
-    images: ['../images/Stadium1.jpg', '../images/Stadium2.jpg'],
-    price: 'Coordinacion',
-    title: 'Cozy house in Medellín',
+    images: ['../images/reaccion.jpeg', '../images/Stadium1.jpg'],
+    price: 'Reaccion',
+    title: 'Balon al aire',
     city: 'Medellín',
     owner: 'Practiquemos',
     ocupation: 'Property',
@@ -48,9 +48,9 @@ const cards = ref([
     redireccion: '/detalles/123'
   },
   {
-    images: ['../images/Stadium1.jpg', '../images/Stadium2.jpg'],
-    price: 'Equilibrio',
-    title: 'Cozy house in Medellín',
+    images: ['../images/adaptacion.jpeg', '../images/Stadium1.jpg'],
+    price: 'Adaptacion',
+    title: 'Saltar la cuerda',
     city: 'Medellín',
     owner: 'Practiquemos',
     ocupation: 'Property',
@@ -58,9 +58,9 @@ const cards = ref([
     players: 5,
   },
   {
-    images: ['../images/Stadium1.jpg', '../images/Stadium2.jpg'],
-    price: 'Agilidad',
-    title: 'Cozy house in Medellín',
+    images: ['../images/ritmo.jpeg', '../images/Stadium1.jpg' ],
+    price: 'Ritmo',
+    title: 'Aplaudir y Saltar',
     city: 'Medellín',
     owner: 'Practiquemos',
     ocupation: 'Property',
@@ -68,9 +68,19 @@ const cards = ref([
     players: 5,
   },
   {
-    images: ['../images/Stadium1.jpg', '../images/Stadium2.jpg'],
-    price: 'Coordinacion',
-    title: 'Cozy house in Medellín',
+    images: ['../images/acoplamiento.jpeg', '../images/Stadium1.jpg'],
+    price: 'Acoplamiento',
+    title: 'Skipping entre conos',
+    city: 'Medellín',
+    owner: 'Practiquemos',
+    ocupation: 'Property',
+    time: 3,
+    players: 5,
+  },
+  {
+    images: ['../images/orientacion.jpeg', '../images/Stadium1.jpg'],
+    price: 'Orientacion',
+    title: 'Espejo',
     city: 'Medellín',
     owner: 'Practiquemos',
     ocupation: 'Property',
@@ -123,22 +133,22 @@ const cards = ref([
         <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <CardOnly
             :title="'Meta #1'"
-            :description="'Total Listings in the System'"
-            :cardClass="' bg-black text-white w-full h-40 flex flex-col items-center justify-center text-center rounded-lg'"
+            :description="'Desarrollar una aplicación web interactiva para la enseñanza de actividades en las capacidades coordinativas'"
+            :cardClass="' bg-black text-white w-full h-50 flex flex-col items-center justify-center text-center rounded-lg'"
             :link="''"
           />
 
           <CardOnly
             :title="'Meta #2'"
-            :description="'Active Listings'"
-            :cardClass="' bg-black text-white w-full h-40 flex flex-col items-center justify-center text-center rounded-lg'"
+            :description="'Facilitar el proceso de aprendizaje por medio de estas actividades'"
+            :cardClass="' bg-black text-white w-full h-50 flex flex-col items-center justify-center text-center rounded-lg'"
             :link="''"
           />
 
           <CardOnly
             :title="'Meta #3'"
-            :description="'Articles in the Blog'"
-            :cardClass="' bg-black text-white w-full h-40 flex flex-col items-center justify-center text-center rounded-lg'"
+            :description="'Fortalecer fisica y mentalmete a los estudiantes por medio de estas actividades'"
+            :cardClass="' bg-black text-white w-full h-50 flex flex-col items-center justify-center text-center rounded-lg'"
             :link="''"
           />
         </div>
