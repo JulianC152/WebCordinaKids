@@ -5,9 +5,8 @@ import IconRight from '../shared/icons/IconRight.vue'
 
 const currentIndex = ref(0)
 const images = [
-  '/images/Stadium1.jpg',
+  '/images/baner.webp',
   '/images/Stadium2.jpg',
-  '/images/Stadium3.jpg',
   '/images/chicos.jpeg',
 ]
 
@@ -38,7 +37,7 @@ onUnmounted(() => {
       :style="{ transform: `translateX(-${currentIndex * 100}%)` }"
     >
       <div v-for="(image, index) in images" :key="index" class="min-w-full relative">
-        <img :src="image" class="w-full h-120 object-cover brightness-90" />
+        <img :src="image" class="w-full h-140 object-cover brightness-90" />
         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
       </div>
     </div>

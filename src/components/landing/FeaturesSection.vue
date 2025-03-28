@@ -34,7 +34,7 @@ const cards = ref([
     ocupation: 'Property',
     time: 2,
     players: 1,
-    redireccion: '/detalles/123'
+    redireccion: '/activities/second'
   },
   {
     images: ['../images/reaccion.jpeg', '../images/Stadium1.jpg'],
@@ -45,7 +45,7 @@ const cards = ref([
     ocupation: 'Property',
     time: 3,
     players: 5,
-    redireccion: '/detalles/123'
+    redireccion: '/activities/third'
   },
   {
     images: ['../images/adaptacion.jpeg', '../images/Stadium1.jpg'],
@@ -56,6 +56,7 @@ const cards = ref([
     ocupation: 'Property',
     time: 3,
     players: 5,
+     redireccion: '/activities/fourth'
   },
   {
     images: ['../images/ritmo.jpeg', '../images/Stadium1.jpg' ],
@@ -66,6 +67,7 @@ const cards = ref([
     ocupation: 'Property',
     time: 3,
     players: 5,
+     redireccion: '/activities/fifth'
   },
   {
     images: ['../images/acoplamiento.jpeg', '../images/Stadium1.jpg'],
@@ -76,6 +78,7 @@ const cards = ref([
     ocupation: 'Property',
     time: 3,
     players: 5,
+     redireccion: '/activities/sixth'
   },
   {
     images: ['../images/orientacion.jpeg', '../images/Stadium1.jpg'],
@@ -86,6 +89,7 @@ const cards = ref([
     ocupation: 'Property',
     time: 3,
     players: 5,
+     redireccion: '/activities/seventh'
   },
 ])
 </script>

@@ -23,7 +23,37 @@ const router = createRouter({
           path: 'first',
           name: 'FirstActivity',
           component: () => import('../components/Activities/FirstActivity.vue'),
-        }
+        },
+        {
+          path: 'second',
+          name: 'SecondActivity',
+          component: () => import('../components/Activities/SecondActivity.vue'),
+        },
+        {
+          path: 'third',
+          name: 'ThirdActivity',
+          component: () => import('../components/Activities/ThirdActivity.vue'),
+        },
+        {
+          path: 'fourth',
+          name: 'FourthActivity',
+          component: () => import('../components/Activities/FourthActivity.vue'),
+        },
+        {
+          path: 'fifth',
+          name: 'FifthActivity',
+          component: () => import('../components/Activities/FifthActivity.vue'),
+        },
+        {
+          path: 'sixth',
+          name: 'SixthActivity',
+          component: () => import('../components/Activities/SixthActivity.vue'),
+        },
+        {
+          path: 'seventh',
+          name: 'SeventhActivity',
+          component: () => import('../components/Activities/SeventhActivity.vue'),
+        },
       ]
     },
   ],
