@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import BrowseCategories from '@/components/landing/BrowseCategories.vue';
+// import BrowseCategories from '@/components/landing/BrowseCategories.vue';
 import NavBar from '../components/landing/NavBar.vue'
 import HeroSection from '@/components/landing/HeroSection.vue';
 import FeaturesSection from '@/components/landing/FeaturesSection.vue'
-import FeaturedLocation from '@/components/landing/FeaturedLocation.vue';
+// import FeaturedLocation from '@/components/landing/FeaturedLocation.vue';
 import FooterSection from '@/components/landing/FooterSection.vue';
 
 </script>
@@ -16,7 +16,7 @@ import FooterSection from '@/components/landing/FooterSection.vue';
     <main class="bg-background">
       <HeroSection />
       <div class="container mx-auto">
-        <BrowseCategories/>
+        <BrowseCategories />
       </div>
       <div>
         <FeaturesSection />

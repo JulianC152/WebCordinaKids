@@ -2,12 +2,7 @@
 import { ref } from 'vue'
 import LineBar from '@/components/shared/LineBar.vue'
 import BaseCard from '../shared/Base/BaseCard.vue'
-import OnlyButton from '../buttons/OnlyButton.vue'
 import CardOnly from '../shared/CardText.vue'
-
-const handleClick = () => {
-  alert('¡Botón clickeado!')
-}
 
 const cards = ref([
   {
@@ -16,7 +11,7 @@ const cards = ref([
       '../images/Lanzamiento2.jpg',
       '../images/Lanzamiento3.jpg',
     ],
-    price: 'Agilidad',
+    price: 'Acomplamiento',
     title: 'Lanzamiento de Pelota',
     city: 'Manos',
     owner: 'Practiquemos',
@@ -27,7 +22,7 @@ const cards = ref([
   },
   {
     images: ['../images/Equilibrio.webp', '../images/Equilibrio2.jpg', '../images/Equilibrio3.jpg'],
-    price: 'Equilibrio',
+    price: 'Orientacion',
     title: 'Equilibrio sobre una pierna',
     city: 'Completo',
     owner: 'Practiquemos',
@@ -38,7 +33,7 @@ const cards = ref([
   },
   {
     images: ['../images/reaccion.jpeg', '../images/Stadium1.jpg'],
-    price: 'Reaccion',
+    price: 'Diferenciacion',
     title: 'Balon al aire',
     city: 'Medellín',
     owner: 'Practiquemos',
@@ -49,7 +44,7 @@ const cards = ref([
   },
   {
     images: ['../images/adaptacion.jpeg', '../images/Stadium1.jpg'],
-    price: 'Adaptacion',
+    price: 'Equilibrio',
     title: 'Saltar la cuerda',
     city: 'Medellín',
     owner: 'Practiquemos',
@@ -60,7 +55,7 @@ const cards = ref([
   },
   {
     images: ['../images/ritmo.jpeg', '../images/Stadium1.jpg' ],
-    price: 'Ritmo',
+    price: 'Adaptacion',
     title: 'Aplaudir y Saltar',
     city: 'Medellín',
     owner: 'Practiquemos',
@@ -71,7 +66,7 @@ const cards = ref([
   },
   {
     images: ['../images/acoplamiento.jpeg', '../images/Stadium1.jpg'],
-    price: 'Acoplamiento',
+    price: 'Ritmo',
     title: 'Skipping entre conos',
     city: 'Medellín',
     owner: 'Practiquemos',
@@ -82,7 +77,7 @@ const cards = ref([
   },
   {
     images: ['../images/orientacion.jpeg', '../images/Stadium1.jpg'],
-    price: 'Orientacion',
+    price: 'Reaccion',
     title: 'Espejo',
     city: 'Medellín',
     owner: 'Practiquemos',
@@ -114,16 +109,8 @@ const cards = ref([
         :redireccion="card.redireccion"
       />
     </div>
-    <div class="flex justify-center">
-      <OnlyButton
-        :text="'Load More'"
-        :buttonClass="'bg-primary text-white py-1 px-4 rounded-full my-4'"
-        :textClass="'text-sm'"
-        :onClick="handleClick"
-      />
-    </div>
   </section>
-  <div class="w-full bg-gray-200 py-10">
+  <div class="w-full bg-red-100 py-10">
     <div class="max-w-screen-lg mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
@@ -136,23 +123,23 @@ const cards = ref([
 
         <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <CardOnly
-            :title="'Meta #1'"
+            :title="'1'"
             :description="'Desarrollar una aplicación web interactiva para la enseñanza de actividades en las capacidades coordinativas'"
-            :cardClass="' bg-black text-white w-full h-50 flex flex-col items-center justify-center text-center rounded-lg'"
+            :cardClass="' bg-black text-sky-50 w-full h-50 flex flex-col items-center  text-center rounded-lg'"
             :link="''"
           />
 
           <CardOnly
-            :title="'Meta #2'"
+            :title="'2'"
             :description="'Facilitar el proceso de aprendizaje por medio de estas actividades'"
-            :cardClass="' bg-black text-white w-full h-50 flex flex-col items-center justify-center text-center rounded-lg'"
+            :cardClass="' bg-black text-sky-50 w-full h-50 flex flex-col items-center  text-center rounded-lg'"
             :link="''"
           />
 
           <CardOnly
-            :title="'Meta #3'"
+            :title="'3'"
             :description="'Fortalecer fisica y mentalmete a los estudiantes por medio de estas actividades'"
-            :cardClass="' bg-black text-white w-full h-50 flex flex-col items-center justify-center text-center rounded-lg'"
+            :cardClass="' bg-black text-sky-50 w-full h-50 flex flex-col items-center  text-center rounded-lg'"
             :link="''"
           />
         </div>

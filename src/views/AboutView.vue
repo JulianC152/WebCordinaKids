@@ -1,8 +1,22 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+// import BrowseCategories from '@/components/landing/BrowseCategories.vue';
+import NavBar from '../components/landing/NavBar.vue'
+import SobreNosotros from '@/components/landing/SobreNosotros.vue';
+// import FeaturedLocation from '@/components/landing/FeaturedLocation.vue';
+import FooterSection from '@/components/landing/FooterSection.vue';
+
+</script>
+
 <template>
-  <div class="">
-    <h1 class="">This is an about page</h1>
+  <div>
+    <header>
+      <NavBar />
+    </header>
+    <main class="bg-background">
+      <SobreNosotros />
+      <div>
+        <FooterSection class="bg-gray-200"/>
+      </div>
+    </main>
   </div>
 </template>
-
-<style></style>

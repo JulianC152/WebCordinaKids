@@ -73,8 +73,8 @@ const navigate = (route: string) => {
           </ul>
         </div>
 
-        <a href="#" class="text-letters hover:text-primary font-bold">Quienes Somos</a>
-        <a href="#" class="text-letters hover:text-primary font-bold">Propuesta</a>
+        <a href="/about" class="text-letters hover:text-primary font-bold">Quienes Somos</a>
+        <a href="/propuesta" class="text-letters hover:text-primary font-bold">Propuesta</a>
       </div>
 
       <!-- Icono de usuario y menú hamburguesa en móviles -->
